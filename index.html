@@ -8,17 +8,42 @@
     </head>
     <body>
 
+        <!--Title Div-->
         <div class="title-fluid">
             <h1> Dorians Password Generator</h1>
         </div>
         
+        <!--Main Div-->
         <div class="body-fluid">
+
             <h2>Generate a Password:</h2>
-            <br>
-            <input id="formInput" type="number" min="8" max="128" required>
-            <button onclick="myFunction()">OK</button>
-            <br>
-            <p id="formOutput"></p>
+            </br>
+
+            <!--Beginning of Form Data-->
+            <form>
+                <label><b>Password Length (8-128 characters)</b></label>
+                <input type="text" name="message" id="userInput" minlength="8" maxlength="128" required>
+                </br>
+                <label><b>Include special characters? (@#$%)</b></label>
+                <input type="checkbox" name="symbols" id="user_input" required>
+                </br>
+                <label><b>Include numbers? (0-9)</b></label>
+                <input type="checkbox" name="numbers" id="user_input" required>
+                </br>
+                <label><b>Include lowercase letters? (a-z)</b></label>
+                <input type="checkbox" name="lcLetters" id="user_input" required>
+                </br>
+                <label><b>Include uppercase letters? (A-Z)</b></label>
+                <input type="checkbox" name="ucLetters" id="user_input" required>
+                </br>
+                </br>
+            </form>
+            
+            <!--Submit Buttom-->
+            <input type="submit" onclick="showInput();"><br/></br>
+            <p><span id='display'></span></p>
+
+
 
         </div>
         

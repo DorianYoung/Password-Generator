@@ -1,12 +1,11 @@
 body {
     background-color: #d4d2d1;
-    background-image: "Assets/PasswordBackground.jpg";
+    background-image: url("https://github.com/DorianYoung/Password-Generator/blob/master/Assets/PasswordBackground.jpg?raw=true");
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: #474544;
     text-align: center;
-    
-    
 }
+
 
 div {
     background-color: white;
@@ -16,4 +15,26 @@ div {
     width: 80%;
     margin: auto;
     margin-bottom: 20px;
+}
+
+
+.title-fluid {
+    color: white;
+    background: repeating-linear-gradient(
+      45deg,
+      #474544,
+      #474544 10px,
+      #888888 10px,
+      #888888 20px
+    );
+}
+
+
+.body-fluid {
+    text-align: left;
+}
+
+
+h2 {
+    text-align: center;
 }
