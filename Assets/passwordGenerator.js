@@ -7,3 +7,16 @@ function showInput() {
     document.getElementById("display").innerHTML = "Your Password is: " + document.getElementById("userInput").value;
   } 
   }
+
+
+function copyInput() {
+  var copyText = document.getElementById("userInput");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
+  document.execCommand("copy");
+  alert("Copied the text: " + copyText.value);
+}
+
+  
+
+  
