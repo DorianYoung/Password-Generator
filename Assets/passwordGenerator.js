@@ -37,15 +37,15 @@ function showInput(event) {
       !lcCheck.checked &&
       !ucCheck.checked) 
   {
-    display.innerHTML = "<p>Please Select A Character Type</p>";
+    display.innerHTML = "Please select at least one character type";
     return;
   }
 
   if (passwordLength.value < 8 ) {
-    display.innerHTML = "<p>Length must be between 8 and 128</p>";
+    display.innerHTML = "Password length must be between 8-128 characters";
     return;
   } else if (passwordLength.value > 128) {
-    display.innerHTML = "<p>Length must be between 8 and 128</p>";
+    display.innerHTML = "Password length must be between 8-128 characters";
     return;
   }
 
@@ -79,7 +79,7 @@ function showInput(event) {
 } 
 
 
-//Copy to Clipboard
+//COPY TO CLIPBOARD
 
 function copyInput() {
   var copyText = document.getElementById("display").innerHTML;

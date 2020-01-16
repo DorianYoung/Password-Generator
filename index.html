@@ -15,6 +15,7 @@
         
         <!--Main Div-->
         <div class="body-fluid">
+
             <h2>Instructions</h2>
             <p>
                 Generate a random password based on user-selected criteria. Make your selections and press "Submit" button below to run generator.
@@ -22,7 +23,7 @@
                 <br>
             </p>
 
-            <!--Beginning of Form Data-->
+            <!--Form Data-->
             <form>
                 <label><b>Password length (8-128 characters)</b></label>
                 <input type="number" name="message" id="lengthInput" min="8" max="128" required>
@@ -42,19 +43,16 @@
                 </br>
             </form>
             
-            <!--Submit Buttom-->
-            <input type="submit" onclick="showInput();"><br/></br>
+            <!--Submit Button-->
+            <input type="submit" onclick="showInput();" value="GENERATE PASSWORD"><br/></br>
             <p><span id='display'></span></p>
-        </br>
-        <button onclick="copyInput()" id='copyButton'>Copy Password</button>
-
-
+            </br>
+            <button onclick="copyInput()" id='copyButton'>Copy Password</button>
 
         </div>
-        
-        
+         
     </body>
-
+<!--Link to JS File-->
 <script type="text/javascript" src="/Users/adl/Desktop/Bootcamp/Homework/Password-Generator/Assets/passwordGenerator.js"></script>
 
 </html>

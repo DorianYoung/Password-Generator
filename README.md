@@ -1,4 +1,4 @@
-![Dorian Young](https://scontent.fsac1-1.fna.fbcdn.net/v/t31.0-8/12794848_10204488461411971_5521269955249941147_o.jpg?_nc_cat=106&_nc_oc=AQkOvpHGEvsSQjnC9T1vUxvk5gG469loTvtasXp5_AY8OIfMTKk9w61SaQuyjmyYqyKm29gfsu3Gbh_XO52UVK8n&_nc_ht=scontent.fsac1-1.fna&oh=19467591f178159e1cb6540dbc3c3a41&oe=5E7A307C)
+![Dorian Young](https://github.com/DorianYoung/Password-Generator/blob/master/Assets/Screenshot.jpg?raw=true)
 https://github.com/DorianYoung
 
 <h2>DORIAN YOUNG PASSWORD GENERATOR</h2>
