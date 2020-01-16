@@ -24,20 +24,20 @@
 
             <!--Beginning of Form Data-->
             <form>
-                <label><b>Password Length (8-128 characters)</b></label>
-                <input type="text" name="message" id="userInput" minlength="8" maxlength="128" required>
+                <label><b>Password length (8-128 characters)</b></label>
+                <input type="number" name="message" id="userInput" min="8" max="128" required>
                 </br>
                 <label><b>Include special characters? (@#$%)</b></label>
-                <input type="checkbox" name="symbols" id="user_Input" required>
+                <input type="checkbox" name="symbols" id="specialInput" required>
                 </br>
                 <label><b>Include numbers? (0-9)</b></label>
-                <input type="checkbox" name="numbers" id="user_Input" required>
+                <input type="checkbox" name="numbers" id="numberInput" required>
                 </br>
                 <label><b>Include lowercase letters? (a-z)</b></label>
-                <input type="checkbox" name="lcLetters" id="user_Input" required>
+                <input type="checkbox" name="lcLetters" id="lcInput" required>
                 </br>
                 <label><b>Include uppercase letters? (A-Z)</b></label>
-                <input type="checkbox" name="ucLetters" id="user_Input" required>
+                <input type="checkbox" name="ucLetters" id="ucInput" required>
                 </br>
                 </br>
             </form>
