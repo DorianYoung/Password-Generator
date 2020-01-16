@@ -1,44 +1,97 @@
-var passwordLength = document.querySelector("#userInput");
-var specialCheck = document.querySelector("#specialInput");
-var numberCheck = document.querySelector("#numberInput");
-var lcCheck = document.querySelector("#lcInput");
-var ucCheck = document.querySelector("#ucInput");
-var display = document.querySelector("#display")
+//GLOBAL VARIABLES
+
+var passwordLength = document.querySelector("#lengthInput"); //Password Length
+var specialCheck = document.querySelector("#specialInput"); //Use special characters? Checkbox
+var numberCheck = document.querySelector("#numberInput"); //Use number characters? Checkbox
+var lcCheck = document.querySelector("#lcInput"); //Use lowercase characters? Checkbox
+var ucCheck = document.querySelector("#ucInput"); //Use uppercase characters? Checkbox
+var submitButton = document.querySelector("#submit"); //Submit button
+var display = document.querySelector("#display"); //Generated Password Display
+var passwordGenerator = document.querySelector("#password-generator");//???
 
 
-//pushes array into another array
+//ARRAYS
 
-var specialArray = ["@","#","$","%"];
-var numArray = [0,1,2,3,4,5,6,7,8,9,0];
-var lcArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-var ucArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z"];
+var specialArray = [" ","!","\"","#","$","%","&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?",
+                    "@","[","\\","]","^","_","`","{","|","}","~"]; //Special Characters Array
+
+var numberArray = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]; //Number Array
+
+var lcArray = ["a","b","c","d","e","f","g","h","i","j","k","l","m",
+                 "n","o","p","q","r","s","t","u","v","w","x","y","z"]; //Lowercase Array
+
+var ucArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M",
+                 "N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; //Uppercase Array
 
 
-// Form Output 
+//FUNCTIONS
 
-function showInput() {
+submitButton.addEventListener("click", showInput); 
 
-  if (!specialCheck.checked && !numberCheck.checked && !lcCheck.checked && !ucCheck.checked) {
-    display.innerHTML = "Please select all boxes.";
+function showInput(event) {
+  var password = [];
+  var charTypes = [];
+
+  if (!specialCheck.checked && 
+      !numberCheck.checked &&
+      !lcCheck.checked &&
+      !ucCheck.checked) 
+  {
+    display.innerHTML = "<p>Please Select A Character Type</p>";
     return;
   }
 
-  if (!userInput.checkValidity()) {
-    document.getElementById("display").innerHTML = userInput.validationMessage;
-  } else {
-    document.getElementById("display").innerHTML = "Your Password is: " + document.getElementById("userInput").value;
-  } 
+  if (passwordLength.value < 8 ) {
+    display.innerHTML = "<p>Length must be between 8 and 128</p>";
+    return;
+  } else if (passwordLength.value > 128) {
+    display.innerHTML = "<p>Length must be between 8 and 128</p>";
+    return;
   }
+
+  if (specialCheck.checked) {
+    charTypes.push(specialArray);
+  } 
+
+  if (numberCheck.checked) {
+    charTypes.push(numberArray);
+  } 
+
+  if (lcCheck.checked) {
+    charTypes.push(lcArray);
+  } 
+
+  if (ucCheck.checked) {
+    charTypes.push(ucArray);
+  } 
+  
+  for (var i = 0; i < passwordLength.value; i++) {
+    var index = Math.floor(Math.random() * charTypes.length) 
+    password[i] = charTypes[index][Math.floor(Math.random() * charTypes[index].length)];
+
+  if (password[0] === " " || password[passwordLength.value - 1] === " ") {
+    i = i - 1; 
+  }
+  }
+  
+  password = password.join("");
+  document.getElementById("display").innerHTML = password;
+} 
+
 
 //Copy to Clipboard
 
 function copyInput() {
-  var copyText = document.getElementById("userInput");
-  copyText.select();
-  copyText.setSelectionRange(0, 99999);
+  var copyText = document.getElementById("display").innerHTML;
+  copyText.select(value);
+  copyText.setSelectionRange(0, 99999).value;
   document.execCommand("copy");
   alert("Copied the text: " + copyText.value);
 }
+
+
+
+
 
 
 
