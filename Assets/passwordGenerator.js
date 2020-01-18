@@ -24,27 +24,26 @@ var ucArray = ["A", "B","C","D","E","F","G","H","I","J","K","L","M",
                  "N","O","P","Q","R","S","T","U","V","W","X","Y","Z"]; //Uppercase Array
 
 
-//FUNCTIONS
+//FUNCTION
 
 submitButton.addEventListener("click", showInput); 
 
 function showInput(event) {
+  
   var password = [];
   var charTypes = [];
 
-  if (!specialCheck.checked && 
-      !numberCheck.checked &&
-      !lcCheck.checked &&
-      !ucCheck.checked) 
-  {
-    display.innerHTML = "Please select at least one character type";
+  if (!specialCheck.checked && !numberCheck.checked && !lcCheck.checked && !ucCheck.checked) {
+    display.innerHTML = "Please select at least one character type"; 
     return;
   }
 
   if (passwordLength.value < 8 ) {
     display.innerHTML = "Password length must be between 8-128 characters";
     return;
-  } else if (passwordLength.value > 128) {
+  } 
+  
+  else if (passwordLength.value > 128) {
     display.innerHTML = "Password length must be between 8-128 characters";
     return;
   }
@@ -82,11 +81,11 @@ function showInput(event) {
 //COPY TO CLIPBOARD
 
 function copyInput() {
-  var copyText = document.getElementById("display").innerHTML;
-  copyText.select(value);
-  copyText.setSelectionRange(0, 99999).value;
+  copyText = document.querySelector("#display");
+  copyText.select();
+  copyText.setSelectionRange(0, 99999);
   document.execCommand("copy");
-  alert("Copied the text: " + copyText.value);
+  alert("Copied the text: " + copyText);
 }
 
 

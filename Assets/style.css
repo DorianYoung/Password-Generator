@@ -45,6 +45,11 @@ p {
     text-decoration: wavy;
 }
 
+#copyMe {
+    text-align: center;
+    text-decoration: wavy;
+}
+
 #copyButton {
     margin-left: auto;
     margin-right: auto;
